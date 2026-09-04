@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lorfi • {{ title }}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+    <aside class="sidebar">
+
+
+        <a
+            href="/dashboard"
+            class="sidebar-logo"
+        >
+
+            <span class="logo-icon">
+                L
+            </span>
+
+            <span>
+                Lorfi
+            </span>
+
+        </a>
+
+
+        <div class="server-box">
+
+            <div class="server-icon">
+                L
+            </div>
+
+            <div>
+
+                <strong>
+                    Lorfi
+                </strong>
+
+                <small>
+                    Dashboard
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <p class="menu-title">
+            GERAL
+        </p>
+
+
+        <a
+            href="/dashboard"
+            class="menu-item"
+        >
+            🏠
+            <span>
+                Dashboard
+            </span>
+        </a>
+
+
+        <p class="menu-title">
+            RECURSOS
+        </p>
+
+
+        <a href="/moderacao" class="menu-item">
+            🛡️
+            <span>Moderação</span>
+        </a>
+
+
+        <a href="/automod" class="menu-item">
+            🤖
+            <span>AutoMod</span>
+        </a>
+
+
+        <a href="/seguranca" class="menu-item">
+            🔐
+            <span>Segurança</span>
+        </a>
+
+
+        <a href="/tickets" class="menu-item">
+            🎫
+            <span>Tickets</span>
+        </a>
+
+
+        <a href="/reports" class="menu-item">
+            🚨
+            <span>Reports</span>
+        </a>
+
+
+        <a href="/sugestoes" class="menu-item">
+            💡
+            <span>Sugestões</span>
+        </a>
+
+
+        <a href="/xp" class="menu-item">
+            📈
+            <span>XP & Ranking</span>
+        </a>
+
+
+        <a href="/economia" class="menu-item">
+            💰
+            <span>Economia</span>
+        </a>
+
+
+        <a href="/welcome" class="menu-item">
+            👋
+            <span>Welcome</span>
+        </a>
+
+
+        <a href="/anuncios" class="menu-item">
+            📢
+            <span>Anúncios</span>
+        </a>
+
+
+        <a href="/promotion" class="menu-item">
+            📈
+            <span>Promotion</span>
+        </a>
+
+
+        <a href="/demotion" class="menu-item">
+            📉
+            <span>Demotion</span>
+        </a>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="/dashboard"
+                class="outline-button full-button"
+            >
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <main class="dashboard-main">
+
+
+        <header class="dashboard-top">
+
+
+            <div>
+
+                <p class="dashboard-label">
+                    LORFI
+                </p>
+
+
+                <h1>
+                    {{ icon }}
+                    {{ title }}
+                </h1>
+
+
+                <p class="dashboard-description">
+                    {{ description }}
+                </p>
+
+            </div>
+
+
+            <a
+                href="/dashboard"
+                class="outline-button"
+            >
+                ← Voltar
+            </a>
+
+
+        </header>
+
+
+
+        <section class="settings-panel">
+
+
+            <div class="settings-title">
+
+
+                <div class="big-feature-icon">
+                    {{ icon }}
+                </div>
+
+
+                <div>
+
+                    <p class="dashboard-label">
+                        LORFI
+                    </p>
+
+                    <h2>
+                        {{ title }}
+                    </h2>
+
+                    <p>
+                        {{ description }}
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="settings-grid">
+
+
+                <div class="setting-card">
+
+                    <div>
+
+                        <strong>
+                            Sistema
+                        </strong>
+
+                        <small>
+                            Estado atual
+                        </small>
+
+                    </div>
+
+
+                    <span class="system-status">
+                        Online
+                    </span>
+
+                </div>
+
+
+
+                <div class="setting-card">
+
+                    <div>
+
+                        <strong>
+                            Prefixo
+                        </strong>
+
+                        <small>
+                            Prefixo padrão do Lorfi
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        class="outline-button copy-button"
+                        data-copy="."
+                        type="button"
+                    >
+                        📋 Copiar .
+                    </button>
+
+                </div>
+
+
+
+                <div class="setting-card">
+
+                    <div>
+
+                        <strong>
+                            Status
+                        </strong>
+
+                        <small>
+                            Serviço do painel
+                        </small>
+
+                    </div>
+
+
+                    <span class="system-status">
+                        Ativo
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="placeholder-box">
+
+
+                <span>
+                    ⚙️
+                </span>
+
+
+                <h3>
+                    Configurações desta seção
+                </h3>
+
+
+                <p>
+                    A estrutura desta página já está pronta.
+                    Vamos conectar cada recurso diretamente
+                    ao bot nas próximas etapas.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 Lorfi
+            </span>
+
+            <span>
+                {{ title }}
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>

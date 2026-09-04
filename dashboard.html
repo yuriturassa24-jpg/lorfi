@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lorfi • Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+    <aside class="sidebar">
+
+
+        <a
+            href="/"
+            class="sidebar-logo"
+        >
+
+            <span class="logo-icon">
+                L
+            </span>
+
+            <span>
+                Lorfi
+            </span>
+
+        </a>
+
+
+        <div class="server-box">
+
+            <div class="server-icon">
+                L
+            </div>
+
+            <div>
+
+                <strong>
+                    Seus servidores
+                </strong>
+
+                <small>
+                    Discord
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <p class="menu-title">
+            GERAL
+        </p>
+
+
+        <a
+            href="/dashboard"
+            class="menu-item active"
+        >
+            🏠
+            <span>
+                Início
+            </span>
+        </a>
+
+
+        <p class="menu-title">
+            MODERAÇÃO
+        </p>
+
+
+        <a
+            href="/moderacao"
+            class="menu-item"
+        >
+            🛡️
+            <span>
+                Moderação
+            </span>
+        </a>
+
+
+        <a
+            href="/automod"
+            class="menu-item"
+        >
+            🤖
+            <span>
+                AutoMod
+            </span>
+        </a>
+
+
+        <a
+            href="/seguranca"
+            class="menu-item"
+        >
+            🔐
+            <span>
+                Segurança
+            </span>
+        </a>
+
+
+        <p class="menu-title">
+            COMUNIDADE
+        </p>
+
+
+        <a
+            href="/tickets"
+            class="menu-item"
+        >
+            🎫
+            <span>
+                Tickets
+            </span>
+        </a>
+
+
+        <a
+            href="/reports"
+            class="menu-item"
+        >
+            🚨
+            <span>
+                Reports
+            </span>
+        </a>
+
+
+        <a
+            href="/sugestoes"
+            class="menu-item"
+        >
+            💡
+            <span>
+                Sugestões
+            </span>
+        </a>
+
+
+        <a
+            href="/xp"
+            class="menu-item"
+        >
+            📈
+            <span>
+                XP & Ranking
+            </span>
+        </a>
+
+
+        <a
+            href="/economia"
+            class="menu-item"
+        >
+            💰
+            <span>
+                Economia
+            </span>
+        </a>
+
+
+        <p class="menu-title">
+            SERVIDOR
+        </p>
+
+
+        <a
+            href="/welcome"
+            class="menu-item"
+        >
+            👋
+            <span>
+                Welcome
+            </span>
+        </a>
+
+
+        <a
+            href="/anuncios"
+            class="menu-item"
+        >
+            📢
+            <span>
+                Anúncios
+            </span>
+        </a>
+
+
+        <a
+            href="/promotion"
+            class="menu-item"
+        >
+            📈
+            <span>
+                Promotion
+            </span>
+        </a>
+
+
+        <a
+            href="/demotion"
+            class="menu-item"
+        >
+            📉
+            <span>
+                Demotion
+            </span>
+        </a>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="/logout"
+                class="outline-button full-button"
+            >
+                Sair
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <main class="dashboard-main">
+
+
+        <header class="dashboard-top">
+
+
+            <div>
+
+                <p class="dashboard-label">
+                    DASHBOARD
+                </p>
+
+
+                <h1>
+                    Olá,
+                    {{ user.global_name or user.username }}
+                    👋
+                </h1>
+
+
+                <p class="dashboard-description">
+                    Escolha um servidor para gerenciar.
+                </p>
+
+            </div>
+
+
+            <button
+                class="refresh-button"
+                type="button"
+            >
+                🔄 Atualizar
+            </button>
+
+
+        </header>
+
+
+
+        <section class="selection-title">
+
+            <h2>
+                Seus servidores
+            </h2>
+
+            <p>
+                Selecione um servidor para continuar.
+            </p>
+
+        </section>
+
+
+
+        <section class="server-grid">
+
+
+            {% for guild in guilds %}
+
+
+            <a
+                href="/servidor/{{ guild.id }}"
+                class="server-card"
+            >
+
+
+                <div class="server-card-icon">
+
+
+                    {% if guild.icon %}
+
+                    <img
+                        src="https://cdn.discordapp.com/icons/{{ guild.id }}/{{ guild.icon }}.png"
+                        alt="{{ guild.name }}"
+                    >
+
+                    {% else %}
+
+                    {{ guild.name[0] }}
+
+                    {% endif %}
+
+
+                </div>
+
+
+
+                <div class="server-card-info">
+
+                    <strong>
+                        {{ guild.name }}
+                    </strong>
+
+                    <small>
+                        ID: {{ guild.id }}
+                    </small>
+
+                </div>
+
+
+                <span class="server-arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+            {% else %}
+
+
+            <div class="empty-server">
+
+                <div>
+                    🏠
+                </div>
+
+                <h2>
+                    Nenhum servidor disponível
+                </h2>
+
+                <p>
+                    Sua conta não possui um servidor
+                    que você possa gerenciar.
+                </p>
+
+            </div>
+
+
+            {% endfor %}
+
+
+        </section>
+
+
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 Lorfi
+            </span>
+
+            <span>
+                Dashboard
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lorfi • {{ guild.name }}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div
+    class="dashboard-layout"
+    id="server-app"
+    data-guild-id="{{ guild.id }}"
+>
+
+
+    <aside class="sidebar">
+
+
+        <a
+            href="/dashboard"
+            class="sidebar-logo"
+        >
+
+            <span class="logo-icon">
+                L
+            </span>
+
+            <span>
+                Lorfi
+            </span>
+
+        </a>
+
+
+        <div class="server-box">
+
+
+            <div class="server-icon">
+
+
+                {% if guild.icon %}
+
+                <img
+                    src="https://cdn.discordapp.com/icons/{{ guild.id }}/{{ guild.icon }}.png"
+                    alt="{{ guild.name }}"
+                >
+
+                {% else %}
+
+                {{ guild.name[0] }}
+
+                {% endif %}
+
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    {{ guild.name }}
+                </strong>
+
+                <small>
+                    Discord
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="menu-title">
+            GERAL
+        </p>
+
+
+        <a
+            href="#top"
+            class="menu-item section-link active"
+            data-section="top"
+        >
+            🏠
+            <span>
+                Visão geral
+            </span>
+        </a>
+
+
+        <a
+            href="#appearance"
+            class="menu-item section-link"
+            data-section="appearance"
+        >
+            🎨
+            <span>
+                Aparência
+            </span>
+        </a>
+
+
+        <p class="menu-title">
+            MODERAÇÃO
+        </p>
+
+
+        <a
+            href="#automod"
+            class="menu-item section-link"
+            data-section="automod"
+        >
+            🤖
+            <span>
+                AutoMod
+            </span>
+        </a>
+
+
+        <a
+            href="/moderacao"
+            class="menu-item"
+        >
+            🛡️
+            <span>
+                Moderação
+            </span>
+        </a>
+
+
+        <a
+            href="/seguranca"
+            class="menu-item"
+        >
+            🔐
+            <span>
+                Segurança
+            </span>
+        </a>
+
+
+        <p class="menu-title">
+            COMUNIDADE
+        </p>
+
+
+        <a href="/tickets" class="menu-item">
+            🎫
+            <span>
+                Tickets
+            </span>
+        </a>
+
+
+        <a href="/reports" class="menu-item">
+            🚨
+            <span>
+                Reports
+            </span>
+        </a>
+
+
+        <a href="/sugestoes" class="menu-item">
+            💡
+            <span>
+                Sugestões
+            </span>
+        </a>
+
+
+        <a href="/xp" class="menu-item">
+            📈
+            <span>
+                XP & Ranking
+            </span>
+        </a>
+
+
+        <a href="/economia" class="menu-item">
+            💰
+            <span>
+                Economia
+            </span>
+        </a>
+
+
+        <p class="menu-title">
+            SERVIDOR
+        </p>
+
+
+        <a href="/welcome" class="menu-item">
+            👋
+            <span>
+                Welcome
+            </span>
+        </a>
+
+
+        <a href="/anuncios" class="menu-item">
+            📢
+            <span>
+                Anúncios
+            </span>
+        </a>
+
+
+        <a href="/promotion" class="menu-item">
+            📈
+            <span>
+                Promotion
+            </span>
+        </a>
+
+
+        <a href="/demotion" class="menu-item">
+            📉
+            <span>
+                Demotion
+            </span>
+        </a>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="/dashboard"
+                class="outline-button full-button"
+            >
+                ← Trocar servidor
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <main class="dashboard-main" id="top">
+
+
+        <header class="dashboard-top">
+
+
+            <div>
+
+                <p class="dashboard-label">
+                    SERVIDOR
+                </p>
+
+
+                <h1>
+                    {{ guild.name }}
+                </h1>
+
+
+                <p class="dashboard-description">
+                    Configure o Lorfi para este servidor.
+                </p>
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <button
+                    class="save-button"
+                    id="save-config"
+                    type="button"
+                >
+                    💾 Salvar
+                </button>
+
+
+                <a
+                    href="/logout"
+                    class="outline-button"
+                >
+                    Sair
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <section
+            class="settings-panel"
+            id="appearance"
+        >
+
+
+            <div class="settings-title">
+
+
+                <div class="big-feature-icon">
+                    🎨
+                </div>
+
+
+                <div>
+
+                    <p class="dashboard-label">
+                        PERSONALIZAÇÃO
+                    </p>
+
+                    <h2>
+                        Aparência
+                    </h2>
+
+                    <p>
+                        As cores abaixo são salvas
+                        na configuração do servidor.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="color-grid">
+
+
+                <div class="color-card">
+
+                    <div>
+
+                        <strong>
+                            Principal
+                        </strong>
+
+                        <small>
+                            Embeds principais
+                        </small>
+
+                    </div>
+
+
+                    <div class="color-picker">
+
+                        <input
+                            type="color"
+                            id="color-primary"
+                            value="{{ cfg.colors.primary }}"
+                        >
+
+                        <code id="color-primary-value">
+                            {{ cfg.colors.primary }}
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="color-card">
+
+                    <div>
+
+                        <strong>
+                            Sucesso
+                        </strong>
+
+                        <small>
+                            Ações concluídas
+                        </small>
+
+                    </div>
+
+
+                    <div class="color-picker">
+
+                        <input
+                            type="color"
+                            id="color-success"
+                            value="{{ cfg.colors.success }}"
+                        >
+
+                        <code id="color-success-value">
+                            {{ cfg.colors.success }}
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="color-card">
+
+                    <div>
+
+                        <strong>
+                            Erro
+                        </strong>
+
+                        <small>
+                            Erros e bloqueios
+                        </small>
+
+                    </div>
+
+
+                    <div class="color-picker">
+
+                        <input
+                            type="color"
+                            id="color-error"
+                            value="{{ cfg.colors.error }}"
+                        >
+
+                        <code id="color-error-value">
+                            {{ cfg.colors.error }}
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="color-card">
+
+                    <div>
+
+                        <strong>
+                            Aviso
+                        </strong>
+
+                        <small>
+                            Alertas
+                        </small>
+
+                    </div>
+
+
+                    <div class="color-picker">
+
+                        <input
+                            type="color"
+                            id="color-warn"
+                            value="{{ cfg.colors.warn }}"
+                        >
+
+                        <code id="color-warn-value">
+                            {{ cfg.colors.warn }}
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="color-card">
+
+                    <div>
+
+                        <strong>
+                            Informação
+                        </strong>
+
+                        <small>
+                            Informações
+                        </small>
+
+                    </div>
+
+
+                    <div class="color-picker">
+
+                        <input
+                            type="color"
+                            id="color-info"
+                            value="{{ cfg.colors.info }}"
+                        >
+
+                        <code id="color-info-value">
+                            {{ cfg.colors.info }}
+                        </code>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section
+            class="settings-panel"
+            id="automod"
+        >
+
+
+            <div class="settings-title">
+
+
+                <div class="big-feature-icon">
+                    🤖
+                </div>
+
+
+                <div>
+
+                    <p class="dashboard-label">
+                        SEGURANÇA
+                    </p>
+
+                    <h2>
+                        AutoMod
+                    </h2>
+
+                    <p>
+                        Ative ou desative o AutoMod.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="setting-card large-setting">
+
+
+                <div>
+
+                    <strong>
+                        AutoMod
+                    </strong>
+
+                    <small>
+                        Proteção automática do servidor.
+                    </small>
+
+                </div>
+
+
+                <button
+                    id="automod-toggle"
+                    type="button"
+                    class="toggle-button {% if cfg.automod.enabled %}is-on{% else %}is-off{% endif %}"
+                >
+
+                    {% if cfg.automod.enabled %}
+                    Ativado
+                    {% else %}
+                    Desativado
+                    {% endif %}
+
+                </button>
+
+
+            </div>
+
+
+            <div class="preview-box">
+
+                <span>
+                    💡
+                </span>
+
+                <div>
+
+                    <strong>
+                        Lembrete
+                    </strong>
+
+                    <p>
+                        Depois de mudar alguma coisa,
+                        clique em <b>Salvar</b>.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 Lorfi
+            </span>
+
+            <span>
+                {{ guild.name }}
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+
+</body>
+
+</html>

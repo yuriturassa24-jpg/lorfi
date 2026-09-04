@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lorfi
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+
+    <a
+        href="/"
+        class="logo"
+    >
+
+        <span class="logo-icon">
+            L
+        </span>
+
+        <span>
+            Lorfi
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/">
+            Início
+        </a>
+
+        <a href="/dashboard">
+            Dashboard
+        </a>
+
+    </nav>
+
+
+    <a
+        href="/login"
+        class="login-button"
+    >
+        Entrar com Discord
+    </a>
+
+
+</header>
+
+
+
+<main class="hero">
+
+
+    <section class="hero-content">
+
+
+        <div class="badge">
+            ● Seu servidor em um só lugar
+        </div>
+
+
+        <h1>
+
+            Seu servidor.
+
+            <span>
+                Mais organizado.
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Moderação, tickets, segurança,
+            sugestões, XP, economia e muito mais
+            em um só lugar.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="/login"
+                class="button primary"
+            >
+                Entrar com Discord
+            </a>
+
+
+            <a
+                href="#features"
+                class="button secondary"
+            >
+                Ver recursos
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <section class="hero-card">
+
+
+        <div class="card-top">
+
+
+            <div class="card-brand">
+
+                <span class="status-dot"></span>
+
+                Lorfi
+
+            </div>
+
+
+            <span class="online-label">
+                ONLINE
+            </span>
+
+
+        </div>
+
+
+
+        <div class="preview-title">
+            Visão geral
+        </div>
+
+
+
+        <div class="stats">
+
+
+            <div class="stat">
+
+                <strong>
+                    1.284
+                </strong>
+
+                <span>
+                    Membros
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    34
+                </strong>
+
+                <span>
+                    Tickets
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    8
+                </strong>
+
+                <span>
+                    Warns
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="activity">
+
+
+            <h3>
+                Sistemas
+            </h3>
+
+
+            <div class="activity-item">
+
+                <span>
+                    🤖
+                </span>
+
+                <div>
+
+                    <strong>
+                        AutoMod
+                    </strong>
+
+                    <small>
+                        Proteção ativa
+                    </small>
+
+                </div>
+
+                <span class="active">
+                    Ativo
+                </span>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span>
+                    🎫
+                </span>
+
+                <div>
+
+                    <strong>
+                        Tickets
+                    </strong>
+
+                    <small>
+                        Sistema ativo
+                    </small>
+
+                </div>
+
+                <span class="active">
+                    Ativo
+                </span>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span>
+                    🔐
+                </span>
+
+                <div>
+
+                    <strong>
+                        Segurança
+                    </strong>
+
+                    <small>
+                        Servidor protegido
+                    </small>
+
+                </div>
+
+                <span class="active">
+                    Ativo
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<section
+    id="features"
+    class="features"
+>
+
+
+    <div class="section-title">
+
+        <span>
+            RECURSOS
+        </span>
+
+
+        <h2>
+            Tudo que você precisa.
+        </h2>
+
+
+        <p>
+            Uma central para gerenciar seu servidor.
+        </p>
+
+    </div>
+
+
+
+    <div class="feature-grid">
+
+
+        <a
+            href="/moderacao"
+            class="feature-card"
+        >
+
+            <div class="feature-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Moderação
+            </h3>
+
+            <p>
+                Ferramentas para sua equipe.
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="/automod"
+            class="feature-card"
+        >
+
+            <div class="feature-icon">
+                🤖
+            </div>
+
+            <h3>
+                AutoMod
+            </h3>
+
+            <p>
+                Proteção automática.
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="/tickets"
+            class="feature-card"
+        >
+
+            <div class="feature-icon">
+                🎫
+            </div>
+
+            <h3>
+                Tickets
+            </h3>
+
+            <p>
+                Atendimento organizado.
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="/seguranca"
+            class="feature-card"
+        >
+
+            <div class="feature-icon">
+                🔐
+            </div>
+
+            <h3>
+                Segurança
+            </h3>
+
+            <p>
+                Proteção do servidor.
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="/sugestoes"
+            class="feature-card"
+        >
+
+            <div class="feature-icon">
+                💡
+            </div>
+
+            <h3>
+                Sugestões
+            </h3>
+
+            <p>
+                Ideias da comunidade.
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="/xp"
+            class="feature-card"
+        >
+
+            <div class="feature-icon">
+                📈
+            </div>
+
+            <h3>
+                XP & Ranking
+            </h3>
+
+            <p>
+                Níveis e experiência.
+            </p>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<section class="cta">
+
+
+    <div>
+
+        <span>
+            LORFI
+        </span>
+
+
+        <h2>
+            Controle tudo em um só lugar.
+        </h2>
+
+
+        <p>
+            Entre com Discord para começar.
+        </p>
+
+    </div>
+
+
+    <a
+        href="/login"
+        class="button primary"
+    >
+        Entrar
+    </a>
+
+
+</section>
+
+
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        <span class="logo-icon">
+            L
+        </span>
+
+        Lorfi
+
+    </div>
+
+
+    <p>
+        © 2026 Lorfi
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>
